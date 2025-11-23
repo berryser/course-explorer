@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mini Project 2: Course Explorer</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="page-header">
+    <h1>Course Explorer</h1>
+  </header>
+
+  <section class="controls" aria-label="Controls">
+    <h2 class="section-title">Load Courses (JSON)</h2>
+    <div class="loader">
+      <input id="fileInput" type="file" accept="application/json" />
+    </div>
+
+    <h2 class="section-title">Sort and Filter</h2>
+    <div class="filters" id="filtersContainer" aria-label="Filters">
+      <!-- Filter dropdowns will be generated here -->
+    </div>
+
+    <div class="sorting" aria-label="Sorting">
+      <div class="sort-field">
+        <label for="sortCombined">Sort By:</label>
+        <select id="sortCombined">
+          <option value="none">None</option>
+          <option value="id-asc">ID (A–Z)</option>
+          <option value="id-desc">ID (Z–A)</option>
+          <option value="title-asc">Title (A–Z)</option>
+          <option value="title-desc">Title (Z–A)</option>
+          <option value="semester-asc">Semester (Earliest first)</option>
+          <option value="semester-desc">Semester (Latest first)</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <section id="messageArea" class="messages" aria-live="polite"></section>
+
+  <main class="content">
+    <section class="list-panel" aria-label="Course list">
+      <div id="courseList" class="course-list" role="list">
+        <!-- Course rows injected here -->
+      </div>
+    </section>
+    <section class="details-panel" aria-label="Course details">
+      <div id="courseDetails" class="course-details">
+        <div class="placeholder">Load data and select a course to see details.</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <small>Built for Mini Project 2</small>
+  </footer>
+
+  <script src="./course.js" defer></script>
+  <script src="./app.js" defer></script>
+</body>
+<html>
+
